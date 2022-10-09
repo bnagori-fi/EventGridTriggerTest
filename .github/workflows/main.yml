@@ -1,7 +1,8 @@
 name: Deploy DotNet project to Azure Function App
 
 on:
-  [push]
+  workflow_dispatch:
+  
 
 # CONFIGURATION
 # For help, go to https://github.com/Azure/Actions
@@ -17,7 +18,7 @@ env:
 
 jobs:
   build-and-deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     environment: dev
     steps:
     - name: 'Checkout GitHub Action'
